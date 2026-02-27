@@ -1,169 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Injury Cases | The Systems Architect for Elite PI Firms</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Injury Cases | Systems Architect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* CSS Reset and Global Styles */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #122E4D; color: white; line-height: 1.6; text-align: center; }
-        h1, h2, h3 { color: #2E9A61; margin-bottom: 1rem; }
-        p { margin-bottom: 1.5rem; }
-        a { text-decoration: none; color: white; transition: color 0.3s ease; }
-        ul { list-style: none; }
-
-        /* Color Palette and Accents */
-        :root {
-            --navy: #122E4D;
-            --green: #2E9A61;
-            --overlay: rgba(255, 255, 255, 0.05);
-            --border: rgba(46, 154, 97, 0.3);
-        }
-
-        /* Responsive Container */
-        .container { max-width: 1100px; margin: auto; padding: 0 20px; }
-
-        /* Header and Nav */
-        header { background-color: rgba(18, 46, 77, 0.95); position: fixed; top: 0; width: 100%; z-index: 1000; border-bottom: 2px solid var(--border); padding: 15px 0; transition: padding 0.3s ease; }
-        header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 40px; }
-        nav ul { display: flex; gap: 20px; }
-        nav a:hover { color: var(--green); }
-
-        /* Hero Section */
-        #hero { padding: 180px 20px 100px; border-bottom: 4px solid var(--green); }
-        #hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        #hero .tagline { font-size: 1.5rem; font-style: italic; opacity: 0.9; }
-        #hero .intro-para { max-width: 800px; margin: 30px auto; }
-        .cta-btn { background-color: var(--green); color: white; padding: 15px 30px; border-radius: 5px; font-weight: bold; display: inline-block; margin-top: 30px; cursor: pointer; border: none; font-size: 1.1rem; }
-        .cta-btn:hover { background-color: #23784c; }
-
-        /* Our Process Section and Workflow Diagram */
-        #process { padding: 80px 0; border-bottom: 2px solid var(--border); }
-        .workflow-diagram img { max-width: 100%; height: auto; border: 2px solid var(--green); border-radius: 10px; margin: 30px 0; }
-        #process .brief-title { font-weight: bold; font-size: 1.2rem; color: #2E9A61; }
-
-        /* The Guarantee Section */
-        #guarantee { padding: 80px 0; background-color: var(--overlay); border-bottom: 2px solid var(--border); }
-        .guarantee-card { border: 1px solid var(--border); padding: 40px; border-radius: 10px; max-width: 700px; margin: auto; text-align: left; }
-        .guarantee-card ul { margin-top: 20px; }
-        .guarantee-card li { position: relative; padding-left: 25px; margin-bottom: 10px; }
-        .guarantee-card li:before { content: '✓'; position: absolute; left: 0; color: var(--green); }
-
-        /* The Systems Architect Section and Photo */
-        #architect { padding: 80px 0; border-bottom: 2px solid var(--border); }
-        .architect-flex { display: flex; gap: 40px; align-items: center; text-align: left; }
-        .architect-photo img { max-width: 300px; height: auto; border-radius: 50%; border: 4px solid var(--green); }
-        .architect-text h2 { margin-top: 0; }
-
-        /* Call to Action Section */
-        #cta { padding: 80px 0; text-align: center; }
-
-        /* Footer */
-        footer { background-color: var(--overlay); padding: 50px 0; border-top: 2px solid var(--border); font-size: 0.9rem; opacity: 0.7; }
-        footer .logo img { height: 30px; margin-bottom: 20px; }
-        footer .parent-dba { font-style: italic; margin-top: 20px; }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            #hero h1 { font-size: 2.2rem; }
-            nav ul { flex-direction: column; gap: 10px; text-align: center; width: 100%; position: absolute; top: 70px; left: 0; background-color: var(--navy); display: none; padding: 20px 0; }
-            nav ul.active { display: flex; }
-            .logo img { height: 30px; }
-            .architect-flex { flex-direction: column-reverse; text-align: center; }
-            .architect-photo img { max-width: 200px; }
-            header { padding: 10px 0; }
-        }
+        body { background-color: #122E4D; color: #ffffff; font-family: 'Inter', sans-serif; }
+        .bg-grid { background-image: radial-gradient(#2E9A61 0.5px, transparent 0.5px); background-size: 30px 30px; opacity: 0.1; position: absolute; inset: 0; z-index: -1; }
+        .engine-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(46, 154, 97, 0.2); transition: all 0.3s ease; }
+        .engine-card:hover { border-color: #2E9A61; transform: translateY(-5px); }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="More Injury Cases, LLC Logo">
-            </a>
-            <nav>
-                <ul>
-                    <li><a href="#process">Our Process</a></li>
-                    <li><a href="#guarantee">The Guarantee</a></li>
-                    <li><a href="#architect">About</a></li>
-                    <li><a href="#cta">Request Audit</a></li>
-                </ul>
-            </nav>
+<body class="relative">
+    <div class="bg-grid"></div>
+
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto">
+        <img src="logo.png" alt="More Injury Cases" class="h-12">
+        <a href="#audit" class="border border-[#2E9A61] text-[#2E9A61] px-6 py-2 rounded-full font-bold hover:bg-[#2E9A61] hover:text-white transition">Structural Audit</a>
+    </nav>
+
+    <section class="py-24 px-6 text-center">
+        <h1 class="text-6xl font-black mb-4 tracking-tight">MORE INJURY CASES</h1>
+        <p class="text-2xl text-[#2E9A61] italic font-light mb-12">The Systems Architect for Elite PI Firms</p>
+        <div class="max-w-3xl mx-auto mb-12 text-gray-300 text-xl leading-relaxed">
+            Stop the "Google Ad Tax." We build industrial-grade engines that turn your local reputation into market-dominating intake machines.
         </div>
-    </header>
+        <a href="#audit" class="bg-[#2E9A61] text-white px-10 py-5 rounded-lg text-xl font-bold hover:scale-105 transition-transform inline-block">REQUEST A STRUCTURAL AUDIT</a>
+    </section>
 
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1>MORE INJURY CASES, LLC</h1>
-                <p class="tagline">The Systems Architect for Elite Personal Injury Firms</p>
-                <div class="intro-para">
-                    <p>Stop paying the "Google Ad Tax." Stop losing high-value cases to national settlement mills because your intake isn't 24/7. We build the "Engines" that weaponize your reputation and turn your local expertise into industrial-grade market dominance.</p>
+    <section class="py-20 bg-black/20">
+        <div class="max-w-6xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-12 text-center text-[#2E9A61]">The Proprietary Engines</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="engine-card p-10 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4">Reputation Authority Engine™</h3>
+                    <p class="text-gray-400">Systematically weaponizing your closed-file successes into a trust-moat that makes your firm the obvious choice.</p>
                 </div>
-                <a href="#cta" class="cta-btn">REQUEST A STRUCTURAL INTAKE AUDIT</a>
-            </div>
-        </section>
-
-        <section id="process">
-            <div class="container">
-                <h2>Our Process: Industrial Logic for the Modern PI Firm</h2>
-                <p>We do not "do marketing." We architect and deploy proprietary, AI-driven intake and reputation systems. Each "Engine" is built to eliminate friction along a precise pathway from Multi-Channel Trigger (Google LSA, Meta Ad, Website Form) to a Signed Retainer.</p>
-                <div class="workflow-diagram">
-                    <img src="diagram.png" alt="Master Technical Brief - Instant Retainer Engine™ workflow diagram">
-                    <p class="brief-title">Master Technical Brief - Instant Retainer Engine™</p>
-                </div>
-                <p>As seen above, our **Instant Retainer Engine™** leverages 24/7 AI Voice/SMS Activation to handle leads within 60 seconds. It intelligently filters prospects, ensuring VIP criteria are routed to a "VIP Hot-Patch (Attorney Cell)" immediately during business hours (8AM-6PM), or automated via Digital Retainer SMS and Auto-Booked Appointments around the clock. This system ensures every potential case is handled with industrial precision and signs high-value clients before competitors can respond.</p>
-            </div>
-        </section>
-
-        <section id="guarantee">
-            <div class="container">
-                <div class="guarantee-card">
-                    <h2>The Service Accountability Guarantee</h2>
-                    <p>Attorneys are tired of agencies that hide behind "impressions" and "clicks." We are not a vendor; we are a strategic partner in your growth. Our business model is based on measurable, opera-tional success, which is why we provide a hard-hitting guarantee that other marketing agencies cannot match:</p>
-                    <ul>
-                        <li>We guarantee a minimum of **7 Enrolled Valuable Leads (EVLs)** per month.</li>
-                        <li>A "lead" is not a name; an EVL is a qualified prospect who has interacted with our Engines and wants to engage your firm.</li>
-                        <li>If we do not hit that mark, we keep optimizing—we do not just bill you for effort; we deliver **settlements**, not just leads.</li>
-                    </ul>
+                <div class="engine-card p-10 rounded-2xl">
+                    <h3 class="text-2xl font-bold mb-4">Instant Retainer Engine™</h3>
+                    <p class="text-gray-400">24/7 AI-driven lead-to-retainer automation. Captures high-value MVAs within 60 seconds.</p>
                 </div>
             </div>
-        </section>
-
-        <section id="architect">
-            <div class="container">
-                <div class="architect-flex">
-                    <div class="architect-photo">
-                        <img src="photo.png" alt="Professional portrait of the founder, in a navy suit with a green tie">
-                    </div>
-                    <div class="architect-text">
-                        <h2>From SIEMENS IT to PI Paralegal</h2>
-                        <p>I build these "Engines" on a foundation of industrial-grade complexity. My background includes industrial IT management at SIEMENS and an MBA in operations, combined with crucial, in-the-trenches experience as a PI paralegal. I understand the liability, demand strategy, and the 15-minute "Drop-Off Zone" where elite firms lose six-figure cases to faster competitors.</p>
-                        <p>This hybrid perspective is unique in the Southeast. I speak both the complex data language of automation and the high-stakes financial language of medical records and policy limits.</p>
-                    </div>
-                </div>
+            <div class="mt-16 border-2 border-[#2E9A61]/30 rounded-3xl overflow-hidden shadow-2xl shadow-[#2E9A61]/10">
+                <img src="diagram.png" alt="Workflow" class="w-full">
             </div>
-        </section>
-
-        <section id="cta">
-            <div class="container">
-                <h2>Ready for Industrial-Grade Intake Power?</h2>
-                <p>I do not show our proprietary Engine architecture in public to protect our clients' competitive advantage. If you want a private look at how we automate the lead-to-retainer process, request your 15-minute structural audit.</p>
-                <a href="https://calendly.com/YOUR-CALENDLY-LINK" class="cta-btn" target="_blank">BOOK YOUR AUDIT NOW</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="More Injury Cases, LLC Logo">
-            </a>
-            <p>&copy; 2026 More Injury Cases, LLC. Greenville, SC. All Rights Reserved.</p>
-            <p class="parent-dba">More Injury Cases is a Systems Architecture Division or D/B/A of.</p>
         </div>
+    </section>
+
+    <section class="py-24 max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
+        <img src="photo.png" alt="Kris Wustrow" class="w-64 h-64 rounded-full border-4 border-[#2E9A61] shadow-xl">
+        <div>
+            <h2 class="text-4xl font-bold mb-6">Built on Industrial Logic</h2>
+            <p class="text-gray-300 text-lg mb-6">My background is in industrial IT management at SIEMENS and a PI paralegal career. I bridge the gap between complex systems and high-stakes legal operations.</p>
+            <div class="bg-[#2E9A61]/10 p-6 border-l-4 border-[#2E9A61]">
+                <p class="font-bold text-white mb-0">The Service Accountability Guarantee</p>
+                <p class="text-gray-300 italic">Minimum 7 Enrolled Valuable Leads per month.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/10 text-center text-gray-500 text-sm">
+        <p>© 2026 More Injury Cases, LLC. Greenville, SC. <br> A division of Victrix Management Consulting, LLC</p>
     </footer>
 </body>
 </html>
